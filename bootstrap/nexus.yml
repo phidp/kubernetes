@@ -4,7 +4,7 @@ metadata:
   name: nexus
   finalizers:
     - resources-finalizer.argocd.argoproj.io
-  namespace: devsecops
+  namespace: argocd
 spec:
   project: devsecops
   source:
