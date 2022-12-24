@@ -13,7 +13,7 @@ spec:
     path: ./deployments/nexus
   destination:
     server: https://kubernetes.default.svc
-    namespace: toolchain
+    namespace: argocd
   syncPolicy:
     syncOptions:
       - CreateNamespace=true  
