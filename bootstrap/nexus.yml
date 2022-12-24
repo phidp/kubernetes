@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: https://github.com/phidp/k8s-lab.git
     targetRevision: HEAD
-    path: deployments/nexus
+    path: ./deployments/nexus/
     directory:
       recurse: true
   destination:
