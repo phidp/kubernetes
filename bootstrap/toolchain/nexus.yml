@@ -10,7 +10,8 @@ spec:
     repoURL: https://github.com/phidp/k8s-lab.git
     targetRevision: HEAD
     path: deployments/nexus
-  
+    directory:
+      recurse: true
   destination:
     server: https://kubernetes.default.svc
     namespace: toolchain
