@@ -4,14 +4,19 @@ metadata:
   name: nexus
   finalizers:
   - resources-finalizer.argocd.argoproj.io
+  namespace: argocd
 spec:
   project: devsecops
   source:
     repoURL: https://github.com/phidp/k8s-lab.git
     targetRevision: HEAD
-    path: ./deployments/nexus/
-    directory:
-      recurse: true
+    path: ./deployments/nexus
   destination:
     server: https://kubernetes.default.svc
     namespace: toolchain
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true  
+    automated: # automated sync by default retries failed attempts 5 times with following delays between attempts ( 5s, 10s, 20s, 40s, 80s ); retry controlled using `retry` field.
+      prune: true # Specifies if resources should be pruned during auto-syncing ( false by default ).
+      selfHeal: true # Specifies if partial app sync should be executed when resources are changed only in target Kubernetes cluster and no git change detected ( false by default ).
