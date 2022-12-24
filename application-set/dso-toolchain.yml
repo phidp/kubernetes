@@ -9,7 +9,7 @@ spec:
       repoURL: https://github.com/phidp/kubernetes.git
       revision: HEAD
       directories:
-      - path: dso-toolchain/*
+      - path: dso-toolchain/*/*
   template:      
     metadata:
       name: '{{path.basename}}'
