@@ -1,0 +1,26 @@
+aipVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: toolchain-ingress
+spec:
+  rules:
+  - host: nexus-dso.example.com
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: nexus-service
+            port:
+              number: 8081
+  - host: jenkins-dso.example.com
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: jenkins-service
+            port:
+              number: 8080
