@@ -1,8 +1,8 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: ingress-controller
-  namespace: toolchain
+  name: ingress-service
+  namespace: docker-desktop
 spec:
   project: devsecops
   source:
@@ -11,7 +11,7 @@ spec:
     path: ./deployments/ingress
   destination:
     server: https://kubernetes.default.svc
-    namespace: toolchain
+    namespace: docker-desktop
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
