@@ -12,6 +12,6 @@ spec:
     app: jenkins-server
   type: NodePort
   ports:
-  - port: 8090
+  - port: 8000
     targetPort: 8080
     nodePort: 32001
