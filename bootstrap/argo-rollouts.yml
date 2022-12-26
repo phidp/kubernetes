@@ -2,8 +2,6 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: argo-rollouts
-  finalizers:
-    - resources-finalizer.argocd.argoproj.io
   namespace: argo-rollouts
 spec:
   project: default
