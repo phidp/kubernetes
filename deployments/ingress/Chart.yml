@@ -3,7 +3,7 @@ name: ingress-nginx
 description: a Helm chart for ingress-controller
 
 type: application
-version:
+version: 4.4.2
 
 dependencies:
 - name: ingress-nginx
