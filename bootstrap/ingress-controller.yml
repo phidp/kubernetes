@@ -11,7 +11,7 @@ spec:
     path: ./deployments/ingress-controller
   destination:
     server: https://kubernetes.default.svc
-    namespace: toolchain
+    namespace: ingress-nginx
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
