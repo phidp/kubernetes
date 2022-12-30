@@ -1,14 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: ingress-controller
+  name: ingress-resource
   namespace: argocd
 spec:
   project: devsecops
   source:
     repoURL: https://github.com/phidp/k8s-lab.git
     targetRevision: HEAD
-    path: ./deployments/ingress
+    path: ./deployments/ingress-resource
   destination:
     server: https://kubernetes.default.svc
     namespace: toolchain
