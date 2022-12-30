@@ -27,8 +27,8 @@ spec:
             name: jenkins-service
             port:
               number: 8080
-  tls:
-  - hosts:
-    - nexus-dso.example.com
-    - jenkins-dso.example.com
-    secretName: example-com-tls
+  # tls:
+  # - hosts:
+  #   - nexus-dso.example.com
+  #   - jenkins-dso.example.com
+  #   secretName: example-com-tls
