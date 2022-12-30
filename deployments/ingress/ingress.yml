@@ -27,6 +27,16 @@ spec:
             name: jenkins-service
             port:
               number: 8080
+  - host: argocd-dso.example.com
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: argocd-server
+            port:
+              number: 8080 
   # tls:
   # - hosts:
   #   - nexus-dso.example.com
