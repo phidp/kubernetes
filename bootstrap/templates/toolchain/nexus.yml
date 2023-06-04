@@ -4,14 +4,14 @@ metadata:
   name: nexus
   namespace: argocd
 spec:
-  project: devsecops
+  project: {{ .Values.argocd.project }}
   source:
-    repoURL: https://github.com/phidp/k8s-lab.git
-    targetRevision: HEAD
+    repoURL: {{ .Values.argocd.source.repoURL }}
+    targetRevision: {{ .Values.argocd.source.repoURL }}
     path: ./deployments/nexus
   destination:
     server: https://kubernetes.default.svc
-    namespace: toolchain
+    namespace: {{ .Values.argocd.destination.namespace }}
   syncPolicy:
     syncOptions:
       - CreateNamespace=true  
