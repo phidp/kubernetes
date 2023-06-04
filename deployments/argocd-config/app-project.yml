@@ -1,14 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-  name: devsecops
+  name: toolchain
   namespace: argocd
   # # Finalizer that ensures that project is not deleted until it is not referenced by any application
   # finalizers:
   #   - resources-finalizer.argocd.argoproj.io
 spec:
   # Project description
-  description: project-devsecops
+  description: project-toolchain
 
   # Allow manifests to deploy from any Git repos
   sourceRepos:
