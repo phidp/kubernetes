@@ -5,8 +5,6 @@ metadata:
     app.kubernetes.io/name: argo-cd
   name: bootstrap
   namespace: argocd
-  finalizers:
-  - resources-finalizer.argocd.argoproj.io
 spec:
   project: default
   destination:
