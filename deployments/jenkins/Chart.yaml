@@ -2,6 +2,6 @@ name: jenkins
 version: 1.0.0
 apiVersion: v2
 dependencies:
-  - name: jenkinsci
+  - name: jenkins
     version: "4.3.23"
     repository: "https://charts.jenkins.io/"
