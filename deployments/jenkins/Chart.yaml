@@ -7,5 +7,5 @@ version: 0.1.0
 
 dependencies:
 - name: jenkins
-  version: 4.3.23
+  version: v4.3.23
   repository: http://localhost:8081/repository/helm-chart
