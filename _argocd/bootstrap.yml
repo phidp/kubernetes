@@ -17,7 +17,7 @@ spec:
     repoURL: https://github.com/phidp/k8s-lab.git
     targetRevision: HEAD
     directory:
-      recurse: false
+      recurse: true
   syncPolicy:
       automated:
         prune: true

@@ -1,20 +1,22 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: ingress-resource
+  name: argocd-config
   namespace: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: "-1"
 spec:
-  project: devsecops
+  project: default
   source:
-    repoURL: https://github.com/phidp/k8s-lab.git
-    targetRevision: HEAD
-    path: ./deployments/ingress-resource
+    repoURL: {{ .Values.argocd.source.repoURL }}
+    targetRevision: {{ .Values.argocd.source.repoURL }}
+    path: ./deployments/argocd-config
   destination:
     server: https://kubernetes.default.svc
-    namespace: toolchain
+    namespace: {{ .Values.argocd.destination.namespace }}
   syncPolicy:
     syncOptions:
-      - CreateNamespace=true
+      - CreateNamespace=true  
     automated: # automated sync by default retries failed attempts 5 times with following delays between attempts ( 5s, 10s, 20s, 40s, 80s ); retry controlled using `retry` field.
       prune: true # Specifies if resources should be pruned during auto-syncing ( false by default ).
       selfHeal: true # Specifies if partial app sync should be executed when resources are changed only in target Kubernetes cluster and no git change detected ( false by default ).
