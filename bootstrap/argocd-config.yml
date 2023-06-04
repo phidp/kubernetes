@@ -8,12 +8,12 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: {{ .Values.argocd.source.repoURL }}
-    targetRevision: {{ .Values.argocd.source.targetRevision }}
+    repoURL: https://github.com/phidp/k8s-lab.git
+    targetRevision: phidp/helm
     path: ./deployments/argocd-config
   destination:
     server: https://kubernetes.default.svc
-    namespace: {{ .Values.argocd.destination.namespace }}
+    namespace: argocd
   syncPolicy:
     syncOptions:
       - CreateNamespace=true  
