@@ -794,11 +794,11 @@ jenkins:
               image: jenkins/inbound-agent:latest
             - name: maven
               image: maven:3.8.1-jdk-8
-              command: 'sleep', 
+              command: 'sleep'
               args: '30d'
             - name: python
               image: python:latest
-              command: 'sleep', 
+              command: 'sleep'
               args: '30d'
   # Here you can add additional agents
   # They inherit all values from `agent` so you only need to specify values which differ
