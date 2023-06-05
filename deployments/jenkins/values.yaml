@@ -803,7 +803,13 @@ jenkins:
 
   # Here you can add additional agents
   # They inherit all values from `agent` so you only need to specify values which differ
-  additionalAgents: {}
+  additionalAgents: {
+    maven:
+      podName: maven
+      customJenkinsLabel: maven
+      image: jenkins/jnlp-agent-maven
+      tag: latest
+  }
   #  maven:
   #    podName: maven
   #    customJenkinsLabels: maven
@@ -820,6 +826,7 @@ jenkins:
   #    command: "/bin/sh -c"
   #    args: "cat"
   #    TTYEnabled: true
+  
 
   persistence:
     enabled: true
