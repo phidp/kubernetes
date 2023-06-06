@@ -1,0 +1,46 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-resource
+  namespace: toolchain
+  annotations:
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+  - host: nexus.phuongphi.cloud
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: nexus-service
+            port:
+              number: 8081
+  - host: jenkins.phuongphi.cloud
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: jenkins
+            port:
+              number: 8080
+  # - host: argocd-dso.example.com
+  #   http:
+  #     paths:
+  #     - pathType: Prefix
+  #       path: "/"
+  #       backend:
+  #         service:
+  #           name: argocd-server
+  #           port:
+  #             number: 8080 
+  tls:
+  - hosts:
+    - nexus.phuongphi.cloud
+    secretName: nexus-tls
+  - hosts:
+    - jenkins.phuongphi.cloud
+    secretName: jenkins-tls
