@@ -17,16 +17,16 @@ spec:
             name: nexus-service
             port:
               number: 8081
-  # - host: jenkins.phuongphi.cloud
-  #   http:
-  #     paths:
-  #     - pathType: Prefix
-  #       path: "/"
-  #       backend:
-  #         service:
-  #           name: jenkins
-  #           port:
-  #             number: 8080
+  - host: jenkins.phuongphi.cloud
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: jenkins
+            port:
+              number: 8080
   # - host: argocd-dso.example.com
   #   http:
   #     paths:
@@ -38,9 +38,9 @@ spec:
   #           port:
   #             number: 8080 
   tls:
-  - hosts:
-    - nexus.phuongphi.cloud
-    secretName: nexus-tls
+  # - hosts:
+  #   - nexus.phuongphi.cloud
+  #   secretName: nexus-tls
   - hosts:
     - jenkins.phuongphi.cloud
     secretName: jenkins-tls
