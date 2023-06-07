@@ -4,4 +4,4 @@ apiVersion: v2
 dependencies:
   - name: jenkins
     version: "4.3.23"
-    repository: "https://charts.jenkins.io/"
+    repository: "https://nexus.phuongphi.cloud/repository/jenkins-chart/"
