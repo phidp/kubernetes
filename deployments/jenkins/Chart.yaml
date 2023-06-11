@@ -3,5 +3,5 @@ version: 1.0.0
 apiVersion: v2
 dependencies:
   - name: jenkins
-    version: "4.3.23"
+    version: "4.3.26"
     repository: http://10.96.65.170:8081/repository/jenkins-chart/
