@@ -47,7 +47,7 @@ jenkins:
     # If you disable the non-Jenkins identity store and instead use the Jenkins internal one,
     # you should revert controller.adminUser to your preferred admin user:
     adminUser: "admin"
-    # adminPassword: <defaults to random>
+    adminPassword: "123456a@"
     admin:
       existingSecret: ""
       userKey: jenkins-admin-user
@@ -278,9 +278,9 @@ jenkins:
     #  - "method groovy.json.JsonSlurperClassic parseText java.lang.String"
     #  - "new groovy.json.JsonSlurperClassic"
     # List of groovy init scripts to be executed during Jenkins controller start
-    initScripts: []
-    #  - |
-    #    print 'adding global pipeline libraries, register properties, bootstrap jobs...'
+    initScripts:
+      - |
+        print 'adding global pipeline libraries, register properties, bootstrap jobs...'
 
     # 'name' is a name of an existing secret in same namespace as jenkins,
     # 'keyName' is the name of one of the keys inside current secret.
@@ -328,10 +328,10 @@ jenkins:
       configUrls: []
       # - https://acme.org/jenkins.yaml
       # Remote URL:s for configuration files.
-      configScripts: {}
-      #  welcome-message: |
-      #    jenkins:
-      #      systemMessage: Welcome to our CI\CD server.  This Jenkins is configured and managed 'as code'.
+      configScripts:
+        welcome-message: |
+          jenkins:
+            systemMessage: Welcome to our CI\CD server.  This Jenkins is configured and managed 'as code'.
       # Allows adding to the top-level security JCasC section. For legacy,  default the chart includes apiToken configurations
       security:
         apiToken:
@@ -621,11 +621,11 @@ jenkins:
     # URL for connecting to the Jenkins controller
     jenkinsUrl:
     # connect to the specified host and port, instead of connecting directly to the Jenkins controller
-    jenkinsTunnel:
+    jenkinsTunnel: jenkinsci-agent:50000
     kubernetesConnectTimeout: 5
     kubernetesReadTimeout: 15
     maxRequestsPerHostStr: "32"
-    namespace:
+    namespace: devsecops
     image: "jenkins/inbound-agent"
     tag: "3107.v665000b_51092-5"
     workingDir: "/home/jenkins/agent"
@@ -635,7 +635,7 @@ jenkins:
     imagePullSecretName:
     componentName: "jenkins-agent"
     websocket: false
-    directConnection: false
+    directConnection: true
     privileged: false
     runAsUser:
     runAsGroup:
@@ -740,15 +740,14 @@ jenkins:
     # Raw yaml template for the Pod. For example this allows usage of toleration for agent pods.
     # https://github.com/jenkinsci/kubernetes-plugin#using-yaml-to-define-pod-templates
     # https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
-    yamlTemplate: ""
-    # yamlTemplate: |-
-    #   apiVersion: v1
-    #   kind: Pod
-    #   spec:
-    #     tolerations:
-    #     - key: "key"
-    #       operator: "Equal"
-    #       value: "value"
+    yamlTemplate: |-
+      apiVersion: v1
+      kind: Pod
+      spec:
+        tolerations:
+        - key: "key"
+          operator: "Equal"
+          value: "value"
     # Defines how the raw yaml field gets merged with yaml definitions from inherited pod templates: merge or override
     yamlMergeStrategy: "override"
     # Timeout in seconds for an agent to be online
@@ -784,22 +783,32 @@ jenkins:
     # For this pod templates configuration to be loaded the following values must be set:
     # controller.JCasC.defaultConfig: true
     # Best reference is https://<jenkins_url>/configuration-as-code/reference#Cloud-kubernetes. The example below creates a python pod template.
-    podTemplates: {}
-    #  python: |
-    #    - name: python
-    #      label: jenkins-python
-    #      serviceAccount: jenkins
-    #      containers:
-    #        - name: python
-    #          image: python:3
-    #          command: "/bin/sh -c"
-    #          args: "cat"
-    #          ttyEnabled: true
-    #          privileged: true
-    #          resourceRequestCpu: "400m"
-    #          resourceRequestMemory: "512Mi"
-    #          resourceLimitCpu: "1"
-    #          resourceLimitMemory: "1024Mi"
+    podTemplates:
+      dso_template: |
+        - name: dso_template
+          label: dso_template
+          serviceAccount: jenkins
+          containers:
+            - name: python
+              image: python:3
+              command: "/bin/sh -c"
+              args: "cat"
+              ttyEnabled: true
+              privileged: true
+              resourceRequestCpu: "400m"
+              resourceRequestMemory: "512Mi"
+              resourceLimitCpu: "1"
+              resourceLimitMemory: "1024Mi"
+            - name: maven
+              image: maven
+              command: "/bin/sh -c"
+              args: "cat"
+              ttyEnabled: true
+              privileged: true
+              resourceRequestCpu: "1.5G"
+              resourceRequestMemory: "1024Mi"
+              resourceLimitCpu: "2"
+              resourceLimitMemory: "2048Mi"
 
   # Here you can add additional agents
   # They inherit all values from `agent` so you only need to specify values which differ
