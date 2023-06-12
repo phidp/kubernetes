@@ -246,7 +246,10 @@ jenkins:
       - workflow-aggregator:596.v8c21c963d92d
       - git:5.1.0
       - configuration-as-code:1647.ve39ca_b_829b_42
-
+      - pipeline-build-step:496.v2449a_9a_221f2
+      - parameterized-trigger:2.45
+      - generic-webhook-trigger:1.86.3
+      - github-branch-source:1725.vd391eef681a_e
     # Set to false to download the minimum required version of all dependencies.
     installLatestPlugins: true
 

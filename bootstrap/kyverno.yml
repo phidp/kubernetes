@@ -1,19 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: ingress-nginx
+  name: kyverno
   namespace: argocd
-  annotations:
-    argocd.argoproj.io/sync-wave: "-5"
 spec:
-  project: toolchain
+  project: default
   source:
     repoURL: https://github.com/phidp/k8s-lab.git
     targetRevision: phidp/helm
-    path: ./deployments/ingress-nginx
+    path: ./deployments/kyverno
   destination:
     server: https://kubernetes.default.svc
-    namespace: devsecops
+    namespace: argocd
   syncPolicy:
     syncOptions:
       - CreateNamespace=true  
