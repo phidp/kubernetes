@@ -492,15 +492,23 @@ kyverno:
 
       clusterRole:
         # -- Extra resource permissions to add in the cluster role
-        extraResources: []
-        # - apiGroups:
-        #     - ''
-        #   resources:
-        #     - pods
-        #   verbs:
-        #     - create
-        #     - update
-        #     - delete
+        extraResources:
+          - apiGroups:
+              - ''
+            resources:
+              - pods
+            verbs:
+              - create
+              - update
+              - delete
+          - apiGroups:
+              - ''
+            resources:
+              - secrets
+            verbs:
+              - create
+              - update
+              - delete          
 
     # -- Create self-signed certificates at deployment time.
     # The certificates won't be automatically renewed if this is set to `true`.
