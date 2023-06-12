@@ -32,8 +32,8 @@ kyverno:
     install: true
 
     # -- Additional CRDs annotations
-    annotations: {}
-      # argocd.argoproj.io/sync-options: Replace=true
+    annotations:
+      argocd.argoproj.io/sync-options: Replace=true
       # strategy.spinnaker.io/replace: 'true'
 
   # Configuration
