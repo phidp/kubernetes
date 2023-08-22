@@ -4,14 +4,14 @@ metadata:
   name: ingress-config
   namespace: argocd
 spec:
-  project: {{ .Values.infra.project }}
+  project: {{ .Values.toolchain.project }}
   source:
-    repoURL: {{ .Values.infra.source.repoURL }}
-    targetRevision: {{ .Values.infra.source.targetRevision }}
+    repoURL: {{ .Values.toolchain.source.repoURL }}
+    targetRevision: {{ .Values.toolchain.source.targetRevision }}
     path: ./deployments/ingress-config
   destination:
     server: https://kubernetes.default.svc
-    namespace: {{ .Values.infra.destination.namespace }}
+    namespace: {{ .Values.toolchain.destination.namespace }}
   syncPolicy:
     syncOptions:
       - CreateNamespace=true  
