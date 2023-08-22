@@ -4,11 +4,11 @@ argocd:
     namespace: argocd
   source:
     repoURL: https://github.com/phidp/k8s-lab.git
-    targetRevision: phidp/helm
+    targetRevision: feature/terraform-bootstrap
 toolchain:
   project: toolchain
   destination:
     namespace: devsecops
   source:
     repoURL: https://github.com/phidp/k8s-lab.git
-    targetRevision: phidp/helm
+    targetRevision: feature/terraform-bootstrap
