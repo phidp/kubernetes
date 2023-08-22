@@ -1,17 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: kyverno-policies
+  name: ingress-config
   namespace: argocd
 spec:
-  project: toolchain
+  project: {{ .Values.infra.project }}
   source:
-    repoURL: https://github.com/phidp/k8s-lab.git
-    targetRevision: phidp/helm
-    path: ./deployments/kyverno-policies
+    repoURL: {{ .Values.infra.source.repoURL }}
+    targetRevision: {{ .Values.infra.source.targetRevision }}
+    path: ./deployments/ingress-config
   destination:
     server: https://kubernetes.default.svc
-    namespace: kyverno
+    namespace: {{ .Values.infra.destination.namespace }}
   syncPolicy:
     syncOptions:
       - CreateNamespace=true  
