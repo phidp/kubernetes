@@ -8,6 +8,8 @@ spec:
   source:
     repoURL: {{ .Values.apps.source.repoURL }}
     targetRevision: {{ .Values.apps.source.targetRevision }}
+    directory:
+      recurse: true
     path: ./deployments/apps
   destination:
     server: https://kubernetes.default.svc
