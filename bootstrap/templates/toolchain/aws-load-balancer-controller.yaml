@@ -13,6 +13,9 @@ spec:
     repoURL: {{ .Values.toolchain.source.repoURL }}
     targetRevision: {{ .Values.toolchain.source.targetRevision }}
     path: ./deployments/aws-load-balancer-controller
+    helm:
+      valueFiles:
+      - values.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: {{ .Values.toolchain.destination.namespace }}
