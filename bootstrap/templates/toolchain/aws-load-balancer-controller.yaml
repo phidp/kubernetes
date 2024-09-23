@@ -12,8 +12,6 @@ spec:
   source:
     repoURL: {{ .Values.toolchain.source.repoURL }}
     targetRevision: {{ .Values.toolchain.source.targetRevision }}
-    directory:
-      recurse: true
     path: ./deployments/aws-load-balancer-controller
   destination:
     server: https://kubernetes.default.svc
