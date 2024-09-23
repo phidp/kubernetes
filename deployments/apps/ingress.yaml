@@ -7,8 +7,9 @@ metadata:
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/load-balancer-name: limit-proxy-alb
     alb.ingress.kubernetes.io/target-type: ip
-    alb.ingress.kubernetes.io/subnets: subnet-01164d942d5a3cd9b,subnet-087a271d604907889,subnet-07abb423c51344cf6
+    alb.ingress.kubernetes.io/subnets: subnet-01fbe4468353cb332,subnet-0b2c8e6bca9574838,subnet-0ff8370910e485325
     alb.ingress.kubernetes.io/tags: Name=limit-proxy-alb
+    alb.ingress.kubernetes.io/security-groups: sg-0568299d8a4b63afa
 spec:
   ingressClassName: alb
   rules:
