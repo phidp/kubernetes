@@ -8,16 +8,16 @@ metadata:
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
-  project: {{ .Values.apps.project }}
+  project: {{ .Values.toolchain.project }}
   source:
-    repoURL: {{ .Values.apps.source.repoURL }}
-    targetRevision: {{ .Values.apps.source.targetRevision }}
+    repoURL: {{ .Values.toolchain.source.repoURL }}
+    targetRevision: {{ .Values.toolchain.source.targetRevision }}
     directory:
       recurse: true
-    path: ./deployments/apps
+    path: ./deployments/aws-load-balancer-controller
   destination:
     server: https://kubernetes.default.svc
-    namespace: {{ .Values.apps.destination.namespace }}
+    namespace: {{ .Values.toolchain.destination.namespace }}
   syncPolicy:
     automated:
       prune: true
