@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: aws-load-balancer-controller
+  namespace: argocd
+  annotations:
+    argocd.argoproj.io/manifest-generate-paths: /deployments/aws-load-balancer-controller
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: {{ .Values.apps.project }}
+  source:
+    repoURL: {{ .Values.apps.source.repoURL }}
+    targetRevision: {{ .Values.apps.source.targetRevision }}
+    directory:
+      recurse: true
+    path: ./deployments/apps
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: {{ .Values.apps.destination.namespace }}
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - ApplyOutOfSyncOnly=true
+      - PruneLast=true
+      - CreateNamespace=true
+      - Validate=false
