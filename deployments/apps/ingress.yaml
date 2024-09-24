@@ -4,9 +4,9 @@ metadata:
   name: go-api-ingress
   namespace: apps
   annotations:
-    alb.ingress.kubernetes.io/load-balancer-name: limit-proxy-alb1
+    alb.ingress.kubernetes.io/load-balancer-name: limit-proxy-alb
     alb.ingress.kubernetes.io/load-balancer-attributes: deletion_protection.enabled=true
-    alb.ingress.kubernetes.io/group.name: limit-proxy-alb1
+    alb.ingress.kubernetes.io/group.name: limit-proxy-alb
     alb.ingress.kubernetes.io/backend-protocol-version: HTTP1
     alb.ingress.kubernetes.io/backend-protocol: HTTP
     alb.ingress.kubernetes.io/healthcheck-path: /healthz
