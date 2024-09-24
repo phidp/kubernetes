@@ -12,7 +12,7 @@ metadata:
     alb.ingress.kubernetes.io/healthcheck-path: /actuator/health
     alb.ingress.kubernetes.io/healthcheck-port: "8081"
     alb.ingress.kubernetes.io/healthcheck-protocol: HTTP
-    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}'
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}]'
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/security-groups: sg-0568299d8a4b63afa
     alb.ingress.kubernetes.io/subnets: subnet-01fbe4468353cb332,subnet-0b2c8e6bca9574838,subnet-0ff8370910e485325
