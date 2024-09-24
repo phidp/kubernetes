@@ -7,12 +7,12 @@ metadata:
     alb.ingress.kubernetes.io/load-balancer-name: limit-proxy-alb
     alb.ingress.kubernetes.io/load-balancer-attributes: deletion_protection.enabled=true
     alb.ingress.kubernetes.io/group.name: limit-proxy-alb
-    alb.ingress.kubernetes.io/backend-protocol-version: HTTP1
-    alb.ingress.kubernetes.io/backend-protocol: HTTP
-    alb.ingress.kubernetes.io/healthcheck-path: /healthz
-    alb.ingress.kubernetes.io/healthcheck-port: "8081"
-    alb.ingress.kubernetes.io/healthcheck-protocol: HTTP
-    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}]'
+    # alb.ingress.kubernetes.io/backend-protocol-version: HTTP1
+    # alb.ingress.kubernetes.io/backend-protocol: HTTP
+    # alb.ingress.kubernetes.io/healthcheck-path: /healthz
+    # alb.ingress.kubernetes.io/healthcheck-port: "8081"
+    # alb.ingress.kubernetes.io/healthcheck-protocol: HTTP
+    # alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}]'
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/security-groups: sg-0bab02d01d0405ce8
     alb.ingress.kubernetes.io/subnets: subnet-0b8965041c691c8a1,subnet-0a7d2c35cf1ad5395,subnet-0a160c130e7b11923
