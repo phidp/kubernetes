@@ -9,12 +9,13 @@ metadata:
     alb.ingress.kubernetes.io/group.name: limit-proxy-alb
     alb.ingress.kubernetes.io/backend-protocol-version: HTTP1
     alb.ingress.kubernetes.io/backend-protocol: HTTP
-    alb.ingress.kubernetes.io/healthcheck-path: /actuator/health
+    alb.ingress.kubernetes.io/healthcheck-path: /healthz
     alb.ingress.kubernetes.io/healthcheck-port: "8081"
     alb.ingress.kubernetes.io/healthcheck-protocol: HTTP
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}]'
     alb.ingress.kubernetes.io/scheme: internet-facing
-    alb.ingress.kubernetes.io/subnets: subnet-09ad8cedf4861acc8,subnet-0f366b203a6cc1a6f,subnet-0bd74927c7557d19b
+    alb.ingress.kubernetes.io/security-groups: sg-0bab02d01d0405ce8
+    # alb.ingress.kubernetes.io/subnets: subnet-09ad8cedf4861acc8,subnet-0f366b203a6cc1a6f,subnet-0bd74927c7557d19b
     alb.ingress.kubernetes.io/tags: Name=limit-proxy-alb
     alb.ingress.kubernetes.io/target-type: ip
 spec:
@@ -24,7 +25,7 @@ spec:
       http:
         paths:
           - path: /healthz
-            pathType: Exact
+            pathType: Prefix
             backend:
               service:
                 name: go-api
