@@ -15,7 +15,7 @@ metadata:
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}]'
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/security-groups: sg-0bab02d01d0405ce8
-    # alb.ingress.kubernetes.io/subnets: subnet-09ad8cedf4861acc8,subnet-0f366b203a6cc1a6f,subnet-0bd74927c7557d19b
+    alb.ingress.kubernetes.io/subnets: subnet-0b8965041c691c8a1,subnet-0a7d2c35cf1ad5395,subnet-0a160c130e7b11923
     alb.ingress.kubernetes.io/tags: Name=limit-proxy-alb
     alb.ingress.kubernetes.io/target-type: ip
 spec:
