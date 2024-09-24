@@ -23,7 +23,7 @@ metadata:
 spec:
   ingressClassName: alb
   rules:
-    - host: go-api.com
+    - host: phidp.cloud
       http:
         paths:
           - path: /healthz
