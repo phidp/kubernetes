@@ -12,6 +12,11 @@ spec:
       labels:
         app: go-api
     spec:
+      tolerations:
+      - key: "dedicated"
+        operator: "Equal"
+        value: "worker"
+        effect: "NoSchedule"
       containers:
         - name: go-api
           image: docker.io/phidp/health-check-app:1.0

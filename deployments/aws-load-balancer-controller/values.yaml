@@ -80,7 +80,11 @@ aws-load-balancer-controller:
 
   nodeSelector: {}
 
-  tolerations: []
+  tolerations:
+  - key: "dedicated"
+    operator: "Equal"
+    value: "infra"
+    effect: "NoSchedule"
 
   # affinity specifies a custom affinity for the controller pods
   affinity: {}
