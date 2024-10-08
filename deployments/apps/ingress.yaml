@@ -32,6 +32,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: go-api
+                name: go-api-service
                 port:
                   number: 8081
