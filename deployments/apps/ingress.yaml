@@ -18,8 +18,8 @@ metadata:
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS": 443}]'
     alb.ingress.kubernetes.io/ssl-redirect: '443'
     alb.ingress.kubernetes.io/scheme: internet-facing
-    alb.ingress.kubernetes.io/security-groups: sg-0bab02d01d0405ce8
-    alb.ingress.kubernetes.io/subnets: subnet-0b8965041c691c8a1,subnet-0a7d2c35cf1ad5395,subnet-0a160c130e7b11923
+    alb.ingress.kubernetes.io/security-groups: sg-0b72ea8b51e75bee0
+    alb.ingress.kubernetes.io/subnets: subnet-0bd7413035e38f60c,subnet-09659c4961726220a,subnet-075e4bd44af55d5d8
     alb.ingress.kubernetes.io/tags: Name=limit-proxy-alb
     alb.ingress.kubernetes.io/target-type: ip
     kubernetes.io/ingress.class: alb
