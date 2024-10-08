@@ -4,9 +4,9 @@ metadata:
   name: go-api-ingress
   namespace: apps
   annotations:
-    alb.ingress.kubernetes.io/load-balancer-name: limit-proxy-alb
+    alb.ingress.kubernetes.io/load-balancer-name: dso-platform-alb
     alb.ingress.kubernetes.io/load-balancer-attributes: deletion_protection.enabled=true
-    alb.ingress.kubernetes.io/group.name: limit-proxy-alb
+    alb.ingress.kubernetes.io/group.name: dso-platform-alb
     alb.ingress.kubernetes.io/group.order: "2"
     alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:637423220670:certificate/af1392f1-05e7-47e1-94e5-be3952b158e8
     alb.ingress.kubernetes.io/backend-protocol-version: HTTP1
@@ -20,7 +20,7 @@ metadata:
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/security-groups: sg-0b72ea8b51e75bee0
     alb.ingress.kubernetes.io/subnets: subnet-0bd7413035e38f60c,subnet-09659c4961726220a,subnet-075e4bd44af55d5d8
-    alb.ingress.kubernetes.io/tags: Name=limit-proxy-alb
+    alb.ingress.kubernetes.io/tags: Name=dso-platform-alb
     alb.ingress.kubernetes.io/target-type: ip
     kubernetes.io/ingress.class: alb
 spec:
