@@ -33,7 +33,7 @@ aws-load-balancer-controller:
     create: true
     # Annotations to add to the service account
     annotations:
-      eks.amazonaws.com/role-arn: arn:aws:iam::905418472862:role/alb-controller-20240924222021204200000025
+      eks.amazonaws.com/role-arn: alb-controller-20241008084223816200000021
       eks.amazonaws.com/sts-regional-endpoints: "true"
     # The name of the service account to use.
     # If not set and create is true, a name is generated using the fullname template
