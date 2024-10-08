@@ -123,7 +123,7 @@ aws-load-balancer-controller:
   enableCertManager: false
 
   # The name of the Kubernetes cluster. A non-empty value is required
-  clusterName: limit-proxy-eks
+  clusterName: dso-platform-eks
 
   # cluster contains configurations specific to the kubernetes cluster
   cluster:
