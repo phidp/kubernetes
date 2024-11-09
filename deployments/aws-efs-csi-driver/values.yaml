@@ -96,9 +96,9 @@ controller:
   serviceAccount:
     create: true
     name: efs-csi-controller-sa
-    annotations: {}
+    annotations:
     ## Enable if EKS IAM for SA is used
-    #  eks.amazonaws.com/role-arn: arn:aws:iam::111122223333:role/efs-csi-role
+     eks.amazonaws.com/role-arn: arn:aws:iam::637423295047:role/aws-efs-csi-driver-20241109054500562000000025
   healthPort: 9909
   regionalStsEndpoints: false
   # securityContext on the controller pod
