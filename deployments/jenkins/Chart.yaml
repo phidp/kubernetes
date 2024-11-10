@@ -1,11 +1,11 @@
 apiVersion: v2
-name: aws-efs-csi-driver
-description: A Helm chart for aws-efs-csi-driver
+name: jenkins
+description: A Helm chart for jenkins
 
 type: application
 version: 1.0.0
 
 dependencies:
-- name: aws-efs-csi-driver
-  version: "3.0.8"
+- name: jenkins
+  version: "5.7.12"
   repository: https://charts.jenkins.io/
