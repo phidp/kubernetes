@@ -1256,7 +1256,7 @@ persistence:
   # -- Labels for the PVC
   labels: {}
   # -- The PVC access mode
-  accessMode: "ReadWriteOnce"
+  accessMode: "ReadWriteMany"
   # -- The size of the PVC
   size: "8Gi"
 
