@@ -201,10 +201,10 @@ aws-efs-csi-driver:
       provisioningMode: efs-ap
       fileSystemId: fs-029b92fc7bc47a51c
       directoryPerms: "700"
-      gidRangeStart: "1000"
-      gidRangeEnd: "2000"
+      uid: "1000"
+      gid: "1000"
       basePath: "/eks"
-      subPathPattern: "/subPath"
-      ensureUniqueDirectory: true
+      # subPathPattern: "/subPath"
+      # ensureUniqueDirectory: true
     reclaimPolicy: Delete
     volumeBindingMode: Immediate
