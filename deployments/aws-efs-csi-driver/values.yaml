@@ -98,7 +98,7 @@ controller:
     name: efs-csi-controller-sa
     annotations:
     ## Enable if EKS IAM for SA is used
-     eks.amazonaws.com/role-arn: arn:aws:iam::767397668337:role/aws-efs-csi-driver-20241110152117761900000023
+     eks.amazonaws.com/role-arn: arn:aws:iam::637423659494:role/aws-efs-csi-driver-20241114093028743100000025
   healthPort: 9909
   regionalStsEndpoints: false
   # securityContext on the controller pod
@@ -175,7 +175,7 @@ node:
     name: efs-csi-node-sa
     annotations:
     ## Enable if EKS IAM for SA is used
-     eks.amazonaws.com/role-arn: arn:aws:iam::767397668337:role/aws-efs-csi-driver-20241110152117761900000023
+     eks.amazonaws.com/role-arn: arn:aws:iam::637423659494:role/aws-efs-csi-driver-20241114093028743100000025
   healthPort: 9809
   # securityContext on the node pod
   securityContext:
