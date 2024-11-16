@@ -3720,7 +3720,7 @@ kube-prometheus-stack:
       ## prometheus resource to be created with selectors based on values in the helm deployment,
       ## which will also match the PrometheusRule resources created
       ##
-      ruleSelectorNilUsesHelmValues: true
+      ruleSelectorNilUsesHelmValues: false
 
       ## PrometheusRules to be selected for target discovery.
       ## If {}, select all PrometheusRules
@@ -3745,7 +3745,7 @@ kube-prometheus-stack:
       ## prometheus resource to be created with selectors based on values in the helm deployment,
       ## which will also match the servicemonitors created
       ##
-      serviceMonitorSelectorNilUsesHelmValues: true
+      serviceMonitorSelectorNilUsesHelmValues: false
 
       ## ServiceMonitors to be selected for target discovery.
       ## If {}, select all ServiceMonitors
@@ -3768,7 +3768,7 @@ kube-prometheus-stack:
       ## prometheus resource to be created with selectors based on values in the helm deployment,
       ## which will also match the podmonitors created
       ##
-      podMonitorSelectorNilUsesHelmValues: true
+      podMonitorSelectorNilUsesHelmValues: false
 
       ## PodMonitors to be selected for target discovery.
       ## If {}, select all PodMonitors
@@ -3790,7 +3790,7 @@ kube-prometheus-stack:
       ## prometheus resource to be created with selectors based on values in the helm deployment,
       ## which will also match the probes created
       ##
-      probeSelectorNilUsesHelmValues: true
+      probeSelectorNilUsesHelmValues: false
 
       ## Probes to be selected for target discovery.
       ## If {}, select all Probes
@@ -3815,7 +3815,7 @@ kube-prometheus-stack:
       ## If null and scrapeConfigSelector is also null, exclude field from the prometheusSpec
       ## (keeping downward compatibility with older versions of CRD)
       ##
-      scrapeConfigSelectorNilUsesHelmValues: true
+      scrapeConfigSelectorNilUsesHelmValues: false
 
       ## scrapeConfigs to be selected for target discovery.
       ## If {}, select all scrapeConfigs
@@ -4690,7 +4690,7 @@ kube-prometheus-stack:
       ## prometheus resource to be created with selectors based on values in the helm deployment,
       ## which will also match the PrometheusRule resources created
       ##
-      ruleSelectorNilUsesHelmValues: true
+      ruleSelectorNilUsesHelmValues: false
 
       ## PrometheusRules to be selected for target discovery.
       ## If {}, select all PrometheusRules
@@ -4776,7 +4776,7 @@ kube-prometheus-stack:
 
       ## If true, http://{{ template "kube-prometheus-stack.thanosRuler.name" . }}.{{ template "kube-prometheus-stack.namespace" . }}:{{ .Values.thanosRuler.service.port }}
       ## will be used as value for externalPrefix
-      externalPrefixNilUsesHelmValues: true
+      externalPrefixNilUsesHelmValues: false
 
       ## The route prefix ThanosRuler registers HTTP handlers for. This is useful, if using ExternalURL and a proxy is rewriting HTTP routes of a request, and the actual ExternalURL is still true,
       ## but the server serves requests under a different route prefix. For example for use with kubectl proxy.
