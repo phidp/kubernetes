@@ -199,7 +199,7 @@ aws-efs-csi-driver:
     - tls
     parameters:
       provisioningMode: efs-ap
-      fileSystemId: fs-029b92fc7bc47a51c
+      fileSystemId: fs-0972310b9a4860d91
       directoryPerms: "700"
       uid: "1000"
       gid: "1000"
