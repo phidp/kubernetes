@@ -799,7 +799,7 @@ jenkins:
       # https://plugins.jenkins.io/prometheus
 
       # -- Enables prometheus service monitor
-      enabled: true
+      enabled: false
       # -- Additional labels to add to the service monitor object
       serviceMonitorAdditionalLabels: {}
       # -- Set a custom namespace where to deploy ServiceMonitor resource
