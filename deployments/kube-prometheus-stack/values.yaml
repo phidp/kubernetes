@@ -3750,11 +3750,13 @@ kube-prometheus-stack:
       ## ServiceMonitors to be selected for target discovery.
       ## If {}, select all ServiceMonitors
       ##
-      serviceMonitorSelector: {}
+      serviceMonitorSelector:
+        matchLabels:
+          prometheus: main
       ## Example which selects ServiceMonitors with label "prometheus" set to "somelabel"
       # serviceMonitorSelector:
       #   matchLabels:
-      #     prometheus: somelabel
+      #     prometheus: main
 
       ## Namespaces to be selected for ServiceMonitor discovery.
       ##
