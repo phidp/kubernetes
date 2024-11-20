@@ -405,6 +405,7 @@ jenkins:
       - git:5.6.0
       - configuration-as-code:1887.v9e47623cb_043
       - prometheus:795.v995762102f28
+      - metrics:4.2.21-458.vcf496cb_839e4
 
     # If set to false, Jenkins will download the minimum required version of all dependencies.
     # -- Download the minimum required version or latest version of all dependencies
