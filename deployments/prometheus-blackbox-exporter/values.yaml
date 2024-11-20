@@ -275,7 +275,7 @@ prometheus-blackbox-exporter:
     ## https://github.com/coreos/prometheus-operator for blackbox-exporter itself
     ##
     selfMonitor:
-      enabled: false
+      enabled: true
       additionalMetricsRelabels: {}
       additionalRelabeling: []
       labels: {}
