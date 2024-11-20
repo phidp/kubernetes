@@ -278,7 +278,8 @@ prometheus-blackbox-exporter:
       enabled: true
       additionalMetricsRelabels: {}
       additionalRelabeling: []
-      labels: {}
+      labels:
+        prometheus: main
       path: /metrics
       scheme: http
       tlsConfig: {}
