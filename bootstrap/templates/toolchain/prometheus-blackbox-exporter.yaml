@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: prometheus-blackbox-exporter
+  namespace: argocd
+  annotations:
+    argocd.argoproj.io/manifest-generate-paths: /deployments/prometheus-blackbox-exporter
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: {{ .Values.toolchain.project }}
+  source:
+    repoURL: {{ .Values.toolchain.source.repoURL }}
+    targetRevision: {{ .Values.toolchain.source.targetRevision }}
+    path: ./deployments/prometheus-blackbox-exporter
+    helm:
+      valueFiles:
+      - values.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: kube-system
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - ApplyOutOfSyncOnly=true
+      - PruneLast=true
+      - CreateNamespace=true
+      - Validate=false

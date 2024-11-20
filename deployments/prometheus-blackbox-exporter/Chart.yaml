@@ -1,0 +1,11 @@
+apiVersion: v2
+name: jenkins
+description: A Helm chart for jenkins
+
+type: application
+version: 1.0.0
+
+dependencies:
+- name: jenkins
+  version: "9.1.0"
+  repository: https://prometheus-community.github.io/helm-charts
